@@ -8,8 +8,15 @@
   box-sizing: border-box;
 }
 
+/* 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* 본문스타일 */
 body {
+  color: #212121;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
@@ -40,12 +47,34 @@ body {
 .logo {
   position: absolute;
   top: 45px;
-  left: 50px;
+  left: 60px;
 }
 
 /* 텍스트 링크 모음 */
 .member {
-  background-color: aqua;
+  /* background-color: aqua; */
+  text-align: right;
+  padding: 4px 0;
+  /* (아래)공백문자를 없애기 위한 방법1_공백문자 안보이게 처리 */
+  /* font-size: 0; */
+}
+
+/* 문맥 선택자: member class 안의 li만 선택하겠다. */
+.member li {
+  /* background-color: pink; */
+  display: inline-block;
+  /* 아래)공백문자를 없애기 위한 방법1_공백문자를 제외한 나머지에게 크기 부여 */
+  /* font-size: 16px; */
+}
+
+.member a {
+  background-color: coral;
+  padding: 6px 0;
+  display: inherit;
+}
+
+.divider {
+  margin-right: 4px;
 }
 
 /* 비주얼 */
