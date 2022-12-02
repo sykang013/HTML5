@@ -41,14 +41,12 @@ body {
 /* 메인 */
 .main {
   background: lightgreen;
-  height: 50vh;
-  display: flow-root;
-  padding: 0 15px;
-}
-
-.group {
-  margin: 0 15px;
-  float: left;
+  min-height: 450px; /*콘텐츠가 적더라도 최소한의 높이를 이정도로 해달라*/
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
 }
 
 .group1 {
