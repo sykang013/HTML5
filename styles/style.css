@@ -37,7 +37,8 @@ body {
   /* em(부모로부터 상속받은 값을 기준으로 계산), rem(root를 기준으로 계산) 단위를 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
-  background: #ccc;
+  background: #ccc
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -108,7 +109,11 @@ body {
 }
 
 /* 메인 메뉴 */
+.navigation {
+  padding-bottom: 80px;
+}
 .menu {
+  border-top: 2px solid #212121;
   background: #e85e2c
     linear-gradient(
       to bottom,
@@ -117,7 +122,31 @@ body {
       #e85e2c 70%,
       #ef9126 100%
     );
+  border-radius: 0 0 5px 5px;
+  display: flow-root;
+  padding-left: 230px;
 }
+
+.menu-item {
+  background-color: aqua;
+  float: left;
+}
+
+.sub-menu {
+  background-color: pink;
+  position: absolute;
+  display: none;
+}
+
+/* background-color -> 배경색
+background-image -> 배경 이미지 
+background-repeat - > 배경 이미지 반복
+background-position -> 배경 이미지 위치
+background-attachment -> 배경 이미지 고정 여부
+background-size -> 배경 이미지 크기 조정 
+
+환반에 단축해서 표기하는 법: 숏텐드 표기법
+background -> 공백으로 값과 값 */
 
 /* 비주얼 */
 .visual {
@@ -158,7 +187,8 @@ body {
 }
 /* 푸터 */
 .footer {
-  background: gray;
+  background: #ccc
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 100%);
 }
 .footer-inner {
   background-color: silver;
