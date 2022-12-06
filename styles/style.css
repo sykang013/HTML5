@@ -1,6 +1,15 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  background-color: yellow;
+  /* 숨김 콘텐츠를 display: none 으로 하면 스크린에서  */
+  /* display: none; */
+  position: absolute;
+  top: -9999em;
+}
+
 /*기본스타일*/
 *,
 *::before,
