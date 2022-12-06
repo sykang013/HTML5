@@ -3,11 +3,16 @@
 
 /* 숨김 콘텐츠 */
 .a11y-hidden {
-  background-color: yellow;
   /* 숨김 콘텐츠를 display: none 으로 하면 스크린에서  */
   /* display: none; */
   position: absolute;
-  top: -9999em;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  /* 아래는 구형브라우저에서는 지원하지 않음. */
+  clip-path: polygon(0 0, 0 0, 0 0);
+  /* 구형브라우저에서는 아래 형태를 사용 */
+  /* clip: rect(0 0 0 0); */
 }
 
 /*기본스타일*/
