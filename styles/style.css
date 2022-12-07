@@ -1,21 +1,17 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fonts.css);
 
 /* 숨김 콘텐츠 */
 .a11y-hidden {
-  /* 숨김 콘텐츠를 display: none 으로 하면 스크린에서  */
-  /* display: none; */
   position: absolute;
   width: 1px;
   height: 1px;
   overflow: hidden;
-  /* 아래는 구형브라우저에서는 지원하지 않음. */
   clip-path: polygon(0 0, 0 0, 0 0);
-  /* 구형브라우저에서는 아래 형태를 사용 */
-  /* clip: rect(0 0 0 0); */
 }
 
-/*기본스타일*/
+/* 기본 스타일 */
 *,
 *::before,
 *::after {
@@ -32,13 +28,13 @@ a {
   text-decoration: none;
 }
 
-/* 본문스타일 */
+/* 본문 스타일 */
 body {
-  /* em(부모로부터 상속받은 값을 기준으로 계산), rem(root를 기준으로 계산) 단위를 사용해보기 */
+  /* em, rem 단위를 사용해보기 */
   font-size: 1.4rem;
   color: #212121;
   background: #ccc
-    linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 100%);
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -63,43 +59,36 @@ body {
   position: relative;
 }
 
-/* 로고 -포지션: 앱솔루트 */
+/* 로고 */
 .logo {
   position: absolute;
   top: 45px;
   left: 60px;
+  z-index: 10;
 }
 
 /* 텍스트 링크 모음 */
 .member {
-  /* background-color: aqua; */
   text-align: right;
   padding: 4px 0;
-  /* english 우 여백 방법2: position 속성을 활용하여 .member 영역을 오른쪽으로 10px만큼 이동하기 */
+  /* position 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
   /* position: relative;
   right: -10px; */
-  /* (아래)공백문자를 없애기 위한 방법1_공백문자 안보이게 처리 */
-  /* font-size: 0; */
-  /* english 우 여백 방법3: transform 속성을 활용하여 .member 영역을 오른쪽으로 10px만큼 이동하기  */
+  /* transform 속성을 활용하여 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
   transform: translateX(10px);
 }
 
-/* 문맥 선택자: member class 안의 li만 선택하겠다. */
 .member li {
-  /* background-color: pink; */
   display: inline-block;
-  /* 아래)공백문자를 없애기 위한 방법1_공백문자를 제외한 나머지에게 크기 부여 */
-  /* font-size: 16px; */
 }
 
 .member a {
-  /* background-color: coral; */
   padding: 6px 10px;
   display: inherit;
   text-transform: uppercase;
 }
 
-/* 마지막 li요소에 포함된 a요소를 선택하여 오른쪽 padding 값을 0으로 재정의 하는 방법 */
+/* 마지막 li 요소에 포함된 a 요소를 선택하여 오른쪽 padding 값을 0으로 재정의 하는 방법 */
 /* .member li:last-child a {
   padding-right: 0;
 } */
@@ -112,8 +101,9 @@ body {
 .navigation {
   padding-bottom: 80px;
 }
+
 .menu {
-  border-top: 2px solid #212121;
+  border-top: 2px solid currentColor;
   background: #e85e2c
     linear-gradient(
       to bottom,
@@ -123,9 +113,13 @@ body {
       #ef9126 100%
     );
   border-radius: 0 0 5px 5px;
-  display: flow-root;
   padding-left: 230px;
   height: 47px;
+  position: relative;
+}
+
+.menu > li:nth-child(-n + 3) {
+  position: relative;
 }
 
 .menu-item {
@@ -133,19 +127,19 @@ body {
   border-left: 2px solid #fff;
 }
 
-/* 구체성 10점 */
+/* 구체성 -> 10점 */
 .menu-button {
   border: 0;
   background: transparent;
   padding: 0 23px;
   line-height: 45px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
-/* 구체성 20점 */
+/* 구체성 -> 20점 */
 .is-active .menu-button {
   color: #ff0;
 }
@@ -156,27 +150,56 @@ body {
   border-top: 2px solid #000;
 }
 
-/* 실습: 5분만에 한 잘못된거 흑흑 */
-/* .is-active .menu-button::after {
-  content: "";
-  border-bottom: 2px solid #000;
-} */
-
 .sub-menu {
   background-color: pink;
   position: absolute;
+  top: 47px;
   display: none;
 }
 
-/* background-color -> 배경색
-background-image -> 배경 이미지 
-background-repeat - > 배경 이미지 반복
-background-position -> 배경 이미지 위치
-background-attachment -> 배경 이미지 고정 여부
-background-size -> 배경 이미지 크기 조정 
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
+}
 
-환반에 단축해서 표기하는 법: 숏텐드 표기법
-background -> 공백으로 값과 값 */
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
+  right: 0;
+}
+
+.is-active .sub-menu {
+  display: block;
+  white-space: nowrap;
+}
+
+.sub-menu li {
+  display: inline-block;
+  background-color: gold;
+}
+
+.sub-menu a::before {
+  content: "\e805";
+  font-family: "fontello";
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+  content: "\e801";
+}
 
 /* 비주얼 */
 .visual {
@@ -218,9 +241,9 @@ background -> 공백으로 값과 값 */
 /* 푸터 */
 .footer {
   background: #ccc
-    linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 100%);
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 .footer-inner {
-  background-color: silver;
+  background: silver;
   height: 15vh;
 }
