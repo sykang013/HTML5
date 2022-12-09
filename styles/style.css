@@ -378,19 +378,23 @@ background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png")
 
 .login-form fieldset {
   position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
 }
 
-.user-email {
-  background-color: #e85e2c;
+.user-email,
+.user-pw {
+  margin-bottom: 5px;
+  /* background-color: #e85e2c; */
 }
 
 .user-pw {
-  background-color: lime;
+  /* background-color: lime; */
 }
 
 .login-form label {
   display: inline-block;
-  background-color: salmon;
+  /* background-color: salmon; */
   /* 4em = 네 글자 만큼 */
   width: 4em;
 }
@@ -399,12 +403,21 @@ background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png")
   width: 90px;
   height: 24px;
   border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+  border-radius: 3px;
 }
 
 .login-button {
   position: absolute;
   top: 0;
   right: 0;
+  height: 53px;
+  background-color: orangered;
+  color: #fff;
+  border: 0;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 .sign {
