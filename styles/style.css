@@ -3,7 +3,8 @@
 @import url(./fonts.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden,
+legend {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -305,10 +306,11 @@ background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png")
 
 /* 메인 */
 .main {
-  background: lightgreen;
-  height: 50vh;
+  background: #fff;
+  min-height: 450px;
   display: flow-root;
-  padding: 0 15px;
+  padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
 }
 
 .group {
@@ -317,7 +319,6 @@ background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png")
 }
 
 .group1 {
-  background-color: violet;
   width: 250px;
 }
 .group2 {
@@ -328,6 +329,106 @@ background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png")
   background-color: gold;
   width: 190px;
 }
+
+/* 로그인 영역: 실습
+.login {
+  background: linear-gradient(45deg, orangered, orange);
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 3px grey;
+}
+
+.login-title {
+  color: yellow;
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+
+.user-email {
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.user-pw {
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+} */
+
+/* 로그인 */
+.login {
+  box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-title {
+  color: #ff0;
+  font-size: 15px;
+  font-weight: 700;
+  text-indent: 1em;
+}
+
+.login-form {
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+
+.login-form fieldset {
+  position: relative;
+}
+
+.user-email {
+  background-color: #e85e2c;
+}
+
+.user-pw {
+  background-color: lime;
+}
+
+.login-form label {
+  display: inline-block;
+  background-color: salmon;
+  /* 4em = 네 글자 만큼 */
+  width: 4em;
+}
+
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+}
+
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign {
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px;
+}
+
+/* fieldset {
+  padding: 10px;
+}
+
+input {
+  width: 8em;
+  height: 1.5em;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+ul.sign {
+  display: flex;
+  justify-content: space-between;
+} */
 
 /* 슬로건 */
 .slogan {
