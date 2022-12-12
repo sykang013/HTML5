@@ -423,8 +423,51 @@ background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png")
 .sign {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 0 10px 10px 10px;
+  padding: 4px 10px 4px 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
+
+.sign li {
+  /* background-color: pink; */
+}
+
+.sign a {
+  display: block;
+  padding: 6px 0;
+  letter-spacing: -1px;
+}
+
+.sign a::before {
+  content: "\e804";
+  font-family: fontello;
+  margin-right: 8px;
+  color: orangered;
+}
+
+/* 실습:  */
+/* .sign li {
+  display: inline-block;
+} */
+
+/* 실습: 아이콘 넣기 */
+/* .sign a::before {
+  content: "\e805";
+  font-family: "fontello";
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
 
 /* fieldset {
   padding: 10px;
@@ -441,6 +484,129 @@ input {
 ul.sign {
   display: flex;
   justify-content: space-between;
+} */
+
+/* 유효성 검사 배너 */
+.validation-list {
+  margin-top: 25px;
+}
+
+.validation-list li {
+  margin-top: 10px;
+  /* 실습 시도 */
+  /* height: 2em;
+  border: 1px solid #aaa;
+  border-radius: 1em 1em;
+  background: #ccc linear-gradient(to bottom, #ccc 3%, #fff 100%);
+  padding: 0.25em 2em;
+  font-weight: 500; */
+}
+
+.validation-list a {
+  display: block;
+  background: url(./images/validation_icon.png) no-repeat 25px 50%,
+    #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 8px 15px 8px 45px;
+  border-radius: 30px;
+  border: 1px solid #aaa;
+}
+
+/* .validation-list a::before {
+  content: url(./images/validation_icon.png);
+} */
+
+.validation-list a:hover,
+.validation-list a:focus {
+  color: red;
+}
+
+/* 실습 시도
+ .validation-list a::before {
+  background-image: url(./images/validation_icon.png);
+  background-position: left top;
+  position: absolute;
+} */
+
+/* 
+.validation-list li a {
+  height: 2em;
+} */
+
+/* 웹 관련 용어 */
+.term {
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.term-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.term-list {
+  margin-top: 10px;
+  background-color: yellow;
+}
+
+.term-list div {
+  background-color: pink;
+  margin-top: 10px;
+  display: flow-root;
+}
+
+.term-list-subject {
+  background-color: lime;
+  float: right;
+  width: 145px;
+}
+
+.term-list-thumbnail {
+  background-color: purple;
+  float: left;
+}
+
+.term-list-thumbnail img {
+  vertical-align: middle;
+}
+
+.term-list-brief {
+  background-color: coral;
+  float: right;
+  width: 145px;
+}
+
+.term-list div {
+  background-color: pink;
+  margin-top: 10px;
+}
+
+/* 실습 시도 */
+/* .term {
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #aaa 100%);
+  border: solid grey 1px;
+  border-radius: 5px 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.term-title {
+  font-weight: 700;
+}
+
+.term-list-thumbnail {
+  float: left;
+}
+
+.term-list-brief {
+  padding: 10px;
+}
+
+.term-list-subject {
+  color: #296897;
+  padding: 8px 2px;
 } */
 
 /* 슬로건 */
