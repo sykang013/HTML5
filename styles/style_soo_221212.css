@@ -1,7 +1,6 @@
-@import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
-@import url(./module.css);
+@import url(./fonts.css);
 
 /* 숨김 콘텐츠 */
 .a11y-hidden,
@@ -32,12 +31,18 @@ a {
 
 /* 본문 스타일 */
 body {
-  color: #212121;
+  /* em, rem 단위를 사용해보기 */
   font-size: 1.4rem;
+  color: #212121;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  /* background-color: yellow;
+  background-image: url("./images/bg_flower.png"),
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: 50% 0, 0 0; */
   background: url("./images/bg_flower.png") no-repeat 50% 0,
     #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%)
       repeat 0 0;
@@ -153,10 +158,11 @@ body {
 }
 
 .sub-menu {
+  /* background-color: pink; */
   position: absolute;
   top: 47px;
-  display: none;
   padding: 4px 0;
+  display: none;
 }
 
 .menu-html,
@@ -178,6 +184,7 @@ body {
 
 .sub-menu li {
   display: inline-block;
+  /* background-color: gold; */
 }
 
 .sub-menu a::before {
@@ -203,6 +210,7 @@ body {
 }
 
 .sub-menu a {
+  /* background-color: aqua; */
   display: inline-block;
   padding: 6px 0;
 }
@@ -213,16 +221,18 @@ body {
 }
 
 /* 비주얼 */
+/* at sign rule */
 @keyframes moveEffect {
   0% {
     font-size: 12px;
-    color: hsla(0, 0%, 0%, 0);
+    color: rgba(0, 0, 0, 0);
+    /* color: hsla(0, 0%, 0%, 0) */
     transform: translate(0, 0);
   }
-
   100% {
     font-size: 24px;
-    color: hsla(0, 0%, 0%, 1);
+    color: rgba(0, 0, 0, 1);
+    /* color: hsla(0, 0%, 0%, 1) */
     transform: translate(400px, 75px);
   }
 }
@@ -243,38 +253,62 @@ body {
 
 .visual::before,
 .visual::after {
-  content: "";
+  content: " ";
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  animation: fadeEffect 2000ms infinite alternate;
+  animation-name: fadeEffect;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .visual::before {
+  /* background-color: yellow; */
+  /* background-image: url("./images/ani_flower_01.png"),
+    url("./images/ani_flower_02.png");
+  background-repeat: no-repeat;
+  background-position: 0 0, 600px 0; */
   background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
     url("./images/ani_flower_02.png") no-repeat 600px 0;
 }
 
 .visual::after {
+  /* background-image: url("./images/ani_flower_03.png"),
+    url("./images/ani_flower_04.png");
+  background-repeat: no-repeat;
+  background-position: 300px 0, 800px 0; */
   background: url("./images/ani_flower_03.png") no-repeat 300px 0,
     url("./images/ani_flower_04.png") no-repeat 800px 0;
   animation-delay: 1000ms;
 }
 
+/* 실습!! 너무 어렵다 ㅠ.ㅠ */
+/* .visual::after {
+background-image: url("./images/bg_flower1.png"), url("./images/bg_flower2.png");
+  background-repeat: no-repeat, repeat;
+  background-position: 25% 75%, 25% 50%; 
+} */
+
 .visual-text {
   font-family: Georgia, "Times New Roman", Times, serif;
+  /* animation-name: moveEffect;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out; */
   animation: moveEffect 400ms ease-in-out forwards;
-  position: relative;
-  z-index: 1;
+  /* 디스플레이를 이용해도 되고 포지션을 이용해도 된다. 딱 정해진, 한가지 방법만 있는것은 아니다. */
+  /* display: inline-block; */
+  position: absolute;
 }
 
 /* 메인 */
 .main {
-  display: flow-root;
   background: #fff;
   min-height: 450px;
+  display: flow-root;
   padding: 30px 15px;
   border-radius: 15px 15px 0 0;
 }
@@ -287,15 +321,38 @@ body {
 .group1 {
   width: 250px;
 }
-
 .group2 {
+  background-color: salmon;
   width: 380px;
-  height: 300px;
 }
-
 .group3 {
+  background-color: gold;
   width: 190px;
 }
+
+/* 로그인 영역: 실습
+.login {
+  background: linear-gradient(45deg, orangered, orange);
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 3px grey;
+}
+
+.login-title {
+  color: yellow;
+  font-weight: 700;
+  text-indent: 0.5em;
+}
+
+.user-email {
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+
+.user-pw {
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+} */
 
 /* 로그인 */
 .login {
@@ -309,7 +366,7 @@ body {
   color: #ff0;
   font-size: 15px;
   font-weight: 700;
-  text-indent: 10px;
+  text-indent: 1em;
 }
 
 .login-form {
@@ -328,10 +385,17 @@ body {
 .user-email,
 .user-pw {
   margin-bottom: 5px;
+  /* background-color: #e85e2c; */
+}
+
+.user-pw {
+  /* background-color: lime; */
 }
 
 .login-form label {
   display: inline-block;
+  /* background-color: salmon; */
+  /* 4em = 네 글자 만큼 */
   width: 4em;
 }
 
@@ -359,25 +423,68 @@ body {
 .sign {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 4px 10px;
-}
-.sign li {
-  display: inline-block;
+  padding: 4px 10px 4px 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
 
-.sign li:first-child {
-  margin-right: 16px;
+.sign li {
+  /* background-color: pink; */
 }
 
 .sign a {
-  display: inline-block;
+  display: block;
   padding: 6px 0;
   letter-spacing: -1px;
 }
 
 .sign a::before {
+  content: "\e804";
+  font-family: fontello;
+  margin-right: 8px;
   color: orangered;
 }
+
+/* 실습:  */
+/* .sign li {
+  display: inline-block;
+} */
+
+/* 실습: 아이콘 넣기 */
+/* .sign a::before {
+  content: "\e805";
+  font-family: "fontello";
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* fieldset {
+  padding: 10px;
+}
+
+input {
+  width: 8em;
+  height: 1.5em;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+ul.sign {
+  display: flex;
+  justify-content: space-between;
+} */
 
 /* 유효성 검사 배너 */
 .validation-list {
@@ -386,23 +493,44 @@ body {
 
 .validation-list li {
   margin-top: 10px;
+  /* 실습 시도 */
+  /* height: 2em;
+  border: 1px solid #aaa;
+  border-radius: 1em 1em;
+  background: #ccc linear-gradient(to bottom, #ccc 3%, #fff 100%);
+  padding: 0.25em 2em;
+  font-weight: 500; */
 }
 
 .validation-list a {
-  background: url("./images/validation_icon.png") no-repeat 25px 50%,
-    #ccc linear-gradient(to bottom, #ccc, #eee);
-  padding: 0 15px 0 55px;
-  border-radius: 30px;
-  line-height: 30px;
-  border: 1px solid #aaa;
-  cursor: pointer;
   display: block;
+  background: url(./images/validation_icon.png) no-repeat 25px 50%,
+    #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 8px 15px 8px 45px;
+  border-radius: 30px;
+  border: 1px solid #aaa;
 }
+
+/* .validation-list a::before {
+  content: url(./images/validation_icon.png);
+} */
 
 .validation-list a:hover,
 .validation-list a:focus {
-  color: #f00;
+  color: red;
 }
+
+/* 실습 시도
+ .validation-list a::before {
+  background-image: url(./images/validation_icon.png);
+  background-position: left top;
+  position: absolute;
+} */
+
+/* 
+.validation-list li a {
+  height: 2em;
+} */
 
 /* 웹 관련 용어 */
 .term {
@@ -451,6 +579,11 @@ body {
   line-height: 1.5;
 }
 
+/* .term-list div {
+  background-color: pink;
+  margin-top: 10px;
+} */
+
 .cross .term-list-subject,
 .cross .term-list-brief {
   float: left;
@@ -460,7 +593,34 @@ body {
   float: right;
 }
 
+/* 실습 시도 */
+/* .term {
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #aaa 100%);
+  border: solid grey 1px;
+  border-radius: 5px 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.term-title {
+  font-weight: 700;
+}
+
+.term-list-thumbnail {
+  float: left;
+}
+
+.term-list-brief {
+  padding: 10px;
+}
+
+.term-list-subject {
+  color: #296897;
+  padding: 8px 2px;
+} */
+
 /* 검색 폼 */
+
 .search-form {
   background: #ccc linear-gradient(to bottom, #ccc, #eee);
   border: 1px solid #aaa;
@@ -478,12 +638,13 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  padding-right: 10px;
 }
+
 .form-group-label {
   flex-shrink: 0;
   margin-right: 10px;
 }
+
 .form-group-input {
   border: 1px solid #aaa;
   border-radius: 3px;
@@ -492,10 +653,11 @@ body {
   flex-grow: 1;
   min-width: 0;
   width: 100%;
-  font-size: 1.2rem;
+  /* max-width: 100%; */
 }
 
 .search-button {
+  /* white-space: nowrap; */
   flex-shrink: 0;
   background-color: #000;
   color: #fff;
@@ -503,231 +665,22 @@ body {
   border: 0;
   border-radius: 3px;
   padding: 0 10px;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
-/* 공지사항 및 자료실 */
-.board {
-  margin-top: 20px;
-  position: relative;
+/* 검색 폼 실습 */
+/* .search-form {
+  background-color: yellow;
 }
 
-.tab-list {
-  display: flex;
-  flex-flow: row nowrap;
+.search-form-inner {
+  padding: 20px 40px;
 }
 
-.tab {
-  border: 1px solid #aaa;
-  background-color: #ccc;
-  border-radius: 5px 5px 0 0;
-  padding: 5px 10px;
-  color: #666;
-}
-
-.is-select.tab {
-  background-color: #fff;
-  color: #e85e2c;
-  border-color: currentColor currentColor #fff currentColor;
-}
-
-.tab-panel {
-  display: none;
-  margin-top: 15px;
-}
-
-.is-select.tab-panel {
-  display: block;
-}
-
-.board-list li {
-  margin-top: 10px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-
-.board-list a {
-  flex-grow: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.board-list time {
-  flex-shrink: 0;
-  margin-left: 10px;
-}
-
-.board-more {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  padding: 8px;
-}
-
-.icon-plus::before {
-  color: hsla(110, 50%, 30%, 1);
-}
-
-/* 새소식 */
-.news {
-  margin-top: 20px;
-  position: relative;
-}
-
-.news::before {
-  content: "";
-  position: absolute;
-  top: 35px;
-  left: 0;
-  width: 80%;
-  height: 1px;
-  background: #aaa linear-gradient(to right, #ccc, #fff);
-}
-
-.news-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.news-link {
-  display: block;
-}
-
-.news-item {
-  margin-top: 35px;
-  /* padding-left: 130px; */
-  position: relative;
-  display: flow-root;
-}
-
-.news-item-title {
-  font-weight: 500;
-  width: 250px;
-  float: right;
-}
-
-.news-item-date {
-  display: block;
-  margin: 5px 0 10px;
-  width: 250px;
-  float: right;
-}
-.news-item-brief {
-  line-height: 1.5;
-  width: 250px;
-  float: right;
-}
-
-.news-item-thumbnail {
-  /* position: absolute;
-  top: 3px;
-  left: 0; */
-  /* text-align: center; */
-}
-
-.news-item-thumbnail img {
-  box-shadow: 0 15px 10px 5px #ccc;
-  margin-bottom: 15px;
-}
-
-.news-item-thumbnail figcaption {
-  width: 112px;
-  text-align: center;
-}
-
-.news-more {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  padding: 8px;
-}
-
-/* 신규 이벤트 및 관련 사이트 */
-
-.event {
-  border-bottom: 1px solid #aaa;
-}
-
-.event-title {
-  display: inline-block;
-}
-
-.event-button-wrapper {
-  height: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  gap: 5px;
-  float: right;
-}
-
-/* IR 기법 -> Image Replacement */
-.event-button {
-  width: 19px;
-  height: 18px;
-  border: 0;
-  padding: 18px 0 0 0;
-  background: url(./images/back_forward.png) no-repeat;
-}
-
-.event-button-next {
-  background-position: -36px 0;
-}
-
-.event-button:focus {
-  outline-offset: -2px;
-}
-
-.event-thumbnail,
-.event-brief {
-  margin: 10px 0;
-}
-
-.event-thumbnail img {
-  border: 1px solid #aaa;
-  box-shadow: 5px 5px 0 0 #ccc;
-}
-
-.event-brief {
-  line-height: 1.5;
-}
-
-.related {
-  margin-top: 10px;
-}
-
-.related-list {
-  background-color: #fff;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  margin-top: 10px;
-  height: 27px;
-  overflow: hidden;
-  transition: height 400ms 0ms, padding 400ms 400ms;
-}
-
-.related-list li {
-  height: 25px;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  padding: 0 5px;
-}
-
-.related-list a {
-  flex-grow: 1;
-  padding: 0 10px;
-}
-
-.related-list:hover,
-.related-list:focus {
-  height: 147px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+.form-group-input {
+  padding: 5px;
+  width: 190px;
+} */
 
 /* 슬로건 */
 .slogan {
